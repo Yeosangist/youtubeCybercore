@@ -179,6 +179,34 @@ html[darker-dark-theme][dark], [darker-dark-theme] [dark] {
     fill: #0c0;
 }
 
+/*Progress bar*/
+.html5-play-progress, .ytp-play-progress {
+	background: linear-gradient(90deg, rgb(0, 50, 0) 0%, rgb(0, 100, 0) 25%, rgb(0, 150, 0) 50%, rgb(0, 200, 0) 75%, rgb(0, 250, 0) 100%) !important;
+	height: 12px !important;
+	border: none !important;
+}
+
+.html5-progress-bar-container, .ytp-progress-bar-container {
+	height: 12px !important;
+}
+
+.html5-progress-bar, .ytp-progress-bar {
+	margin-top: 12px !important;
+}
+ 
+    .html5-progress-list, .ytp-progress-list, .video-ads .html5-progress-list.html5-ad-progress-list, .video-ads .ytp-progress-list.ytp-ad-progress-list {
+	height: 12px !important;
+}
+
+.ytp-scrubber-button {
+	background-color: rgb(0, 100, 0) !important;
+	border: 1px solid black !important;
+	height:16px !important;
+	width: 8px !important;
+	margin-top: 2px !important;
+	margin-left: 0px !important;
+}
+
 /*Watched videos*/
 	#progress.ytd-thumbnail-overlay-resume-playback-renderer[style*="100%"]::before {
 		content: '✅ Watched';
