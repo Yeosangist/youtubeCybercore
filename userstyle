@@ -155,25 +155,6 @@ html[darker-dark-theme][dark], [darker-dark-theme] [dark] {
     color: #080;
 }
 
-/*The sparkly gif around progress bar button*/
-.ytp-big-mode .ytp-scrubber-pull-indicator::before, .ytp-big-mode .ytp-scrubber-pull-indicator::after, .ytp-scrubber-pull-indicator::before, .ytp-scrubber-pull-indicator::after {
-		content: '';
-		top: -13px;
-		left: -13px;
-		opacity: 1;
-        width: 40px;
-		height: 40px;
-		border-style: solid;
-		border-width: 0px;
-		border-color: #e70b0b00;
-		background-image: url(https://i.postimg.cc/wxtHHvWL/starfall.gif);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 100%;
-		transform: rotate(94deg);
-		border-radius: 81px;
-	}
-
 /*Video bar buttons*/
 .ytp-svg-fill {
     fill: #0c0;
