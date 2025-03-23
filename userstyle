@@ -25,9 +25,19 @@ ytd-shorts[enable-anchored-panel] .anchored-panel.ytd-shorts {
      background-color: #000000c2;
 }
 
+/*Community post background*/
+ytd-backstage-post-renderer {
+    background: #000c;
+}
+
 /*Video decription background*/
 #description.ytd-watch-metadata {
     background: rgb(0 0 0 / 80%);
+}
+
+/*Box behind  searched videos so you can see the text*/
+#meta.ytd-playlist-video-renderer, #dismissible.ytd-video-renderer, .lockup.ytd-item-section-renderer {
+    background: #000c;
 }
 
 /*The glow and black behind small video player*/
