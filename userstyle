@@ -198,6 +198,34 @@ html[darker-dark-theme][dark], [darker-dark-theme] [dark] {
 	margin-left: 0px !important;
 }
 
+/*Heatmap*/
+.ytp-heat-map-svg {
+	margin-top: 3px !important;
+}
+
+.ytp-heat-map-container { 
+	height: 50px !important;
+}
+
+.ytp-heat-map-graph {
+	fill-opacity: 0.5 !important;
+	-webkit-animation: mymove 5s linear infinite;
+    -moz-animation: mymove 5s linear infinite;
+    animation: mymove 5s linear infinite;
+}
+
+@keyframes mymove {
+	0% { fill: rgba(0,50,0,1) }
+	13% { fill: rgba(0,100,0,1) }
+	26% { fill: rgba(0,150,0,1) }
+	39% { fill: rgba(0,200,0,1) }
+	52% { fill: rgba(0,250,0,1) }
+	65% { fill: rgba(0,200,0,1) }
+	78% { fill: rgba(0,150,0,1) }
+	91% { fill: rgba(0,100,0,1) }
+	100% { fill: rgba(0,50,0,1) }
+}
+
 /*Watched videos*/
 	#progress.ytd-thumbnail-overlay-resume-playback-renderer[style*="100%"]::before {
 		content: '✅ Watched';
