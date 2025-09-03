@@ -1,15 +1,14 @@
-@-moz-document domain("youtube.com") {
 /* ==UserStyle==
 @name         Youtube Cybercore
-@namespace    USO Archive
+@version      20250829.08.48
+@namespace    https://userstyles.world/user/Yeosangist
+@description  Changes the background and colours of YouTube to a green and black cybercore aesthetic.
 @author       Yeosangist
-@description  Green and black cybercore YouTube
-@version      20250318.12.13
-@license      CC-0
-@preprocessor uso
+@license      CC0
 ==/UserStyle== */
 
-/*The background*/
+@-moz-document domain("youtube.com") {
+/*The background (comment out if it's overstimulating)
     ytd-app[darker-dark-theme],
 	ytd-app {
 		background-image: url(https://wallpapercave.com/wp/wp13332771.jpg)!important;
@@ -18,6 +17,17 @@
 		background-position: center;
 		background-blend-mode: screen !important;
         background-size: cover !important;
+	}*/
+
+/*A simple black background in case the image gets too much*/
+ytd-app[darker-dark-theme],
+ytd-app {
+    background-color: #000;
+}
+
+/*4 videos per row on the home page*/
+	.ytd-two-column-browse-results-renderer {
+	--ytd-rich-grid-items-per-row: 4 !important;
 	}
 
 /*Shorts comment background*/
@@ -40,14 +50,18 @@ ytd-backstage-post-renderer {
     background: #000c;
 }
 
-/*The glow and black behind small video player*/
-  #cinematics {
-    mix-blend-mode: lighten !important;
-    z-index: -11;
-  }
+/*Background behind channels in search results*/
+#content-section.ytd-channel-renderer {
+    background: #000c;
+}
+
+/*Disables the glow and black box behind the small video player, which is caused by ambient mode*/
+#cinematics.ytd-watch-flexy {
+    display: none;
+}
 
 /*Comment background so you can see them*/
-#body.ytd-comment-view-model {
+#body.ytd-comment-view-model, #input-container.ytd-commentbox {
     background: #000c !important;
 }
 
@@ -89,6 +103,17 @@ ytd-backstage-post-renderer {
         background-color: #0f0;
 }
 
+.ytp-button.screenshotButton svg path,
+.ytp-button.screenshotButton svg circle, 
+.ytp-subtitles-button.ytp-button svg path,
+.ytp-button.ytp-settings-button.ytp-hd-quality-badge svg path,
+.ytp-button.ytp-settings-button svg path,
+.ytp-miniplayer-button.ytp-button svg path,
+.ytp-size-button.ytp-button svg path{
+    fill: #0f0 !important;
+}
+
+
 html[system-icons][dark], html[system-icons] [dark] {
     --yt-spec-icon-inactive: #0a0;
     --yt-spec-icon-disabled: #717171;
@@ -96,6 +121,7 @@ html[system-icons][dark], html[system-icons] [dark] {
 }
 
 html[dark], [dark] {
+    .style-scope.ytd-guide-renderer { background-color: #0f0f0f9c;}
     --yt-spec-base-background: #0f0f0fa6;
     --yt-spec-brand-icon-active: #0f0;
 }
@@ -104,8 +130,8 @@ html[dark], [dark] {
 	.text.ytd-notification-renderer,
 	.title.ytd-video-primary-info-renderer,
 	.content.ytd-video-secondary-info-renderer,
-	#content-text.ytd-comment-renderer,
-	h3.ytd-compact-video-renderer,
+	#content-text.ytd-comment-renderer, .yt-lockup-metadata-view-model-wiz__title,
+	h3.ytd-compact-video-renderer, .ytChipShapeInactive,
 	.title.ytd-guide-entry-renderer,
 	yt-formatted-string.ytd-menu-navigation-item-renderer,
     .ytp-time-current, .ytp-time-separator, .ytp-time-duration,
@@ -135,12 +161,13 @@ html[dark], [dark] {
 	#content-text.ytd-backstage-post-renderer,
 	ytd-comment-action-buttons-renderer {
 	color: #5f5 !important;
-    text-shadow: 0 0 5px rgb(0 255 0);
+    text-shadow: 0 0 10px rgb(0, 0, 0);
 	}
 .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
     color: #0d0 /*! rtl:ignore */;
 }
-.yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color {
+.yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
+.yt-lockup-metadata-view-model__title {
     color: #0d0 !important;
 }
 html[dark], [dark] {
@@ -217,12 +244,12 @@ html[darker-dark-theme][dark], [darker-dark-theme] [dark] {
 @keyframes mymove {
 	0% { fill: rgba(0,50,0,1) }
 	13% { fill: rgba(0,100,0,1) }
-	26% { fill: rgba(0,150,0,1) }
-	39% { fill: rgba(0,200,0,1) }
-	52% { fill: rgba(0,250,0,1) }
+	25% { fill: rgba(0,150,0,1) }
+	38% { fill: rgba(0,200,0,1) }
+	50% { fill: rgba(0,250,0,1) }
 	65% { fill: rgba(0,200,0,1) }
 	78% { fill: rgba(0,150,0,1) }
-	91% { fill: rgba(0,100,0,1) }
+	90% { fill: rgba(0,100,0,1) }
 	100% { fill: rgba(0,50,0,1) }
 }
 
@@ -256,7 +283,7 @@ html[darker-dark-theme][dark], [darker-dark-theme] [dark] {
     width: 200%;
     height: 100%;
     border-style: solid;
-    border-color: #0f0 #0f0 #0f05;
+    border-color: #0c0c #0a0c #090c;
     border-radius: 50%;
     border-width: 6px;
 }
